@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flappy Bird</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #33ffff;
+        }
+        canvas {
+            background-color: #3ff;
+            border: 1px solid #000;
+        }
+    </style>
+</head>
+<body>
+<canvas id="gameCanvas" width="320" height="480"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const context = canvas.getContext('2d');
+
+    const bird = {
+        x: 50,
+        y: 150,
+        width: 20,
+        height: 20,
+        gravity: 0.6,
+        lift: -15,
+        velocity: 0
+    };
+
+    const pipes = [];
+    const pipeWidth = 20;
+    const pipeGap = 200;
+    let frameCount = 0;
+    let score = 0;
+
+    function setup() {
+        document.addEventListener('keydown', () => {
+            bird.velocity = bird.lift;
+        });
+        setInterval(loop, 1000 / 60);
+    }
+
+    function loop() {
+        update();
+        draw();
+    }
+
+    function update() {
+        bird.velocity += bird.gravity;
+        bird.y += bird.velocity;
+
+        if (bird.y + bird.height > canvas.height || bird.y < 0) {
+            reset();
+        }
+
+        frameCount++;
+        if (frameCount % 90 === 0) {
+            const pipeY = Math.floor(Math.random() * (canvas.height - pipeGap));
+            pipes.push({ x: canvas.width, y: pipeY });
+        }
+
+        pipes.forEach(pipe => {
+            pipe.x -= 2;
+            if (pipe.x + pipeWidth < 0) {
+                pipes.shift();
+                score++;
+            }
+
+            if (bird.x < pipe.x + pipeWidth && bird.x + bird.width > pipe.x &&
+                (bird.y < pipe.y || bird.y + bird.height > pipe.y + pipeGap)) {
+                reset();
+            }
+        });
+    }
+
+    function draw() {
+        context.clearRect(0, 0, canvas.width, canvas.height);
+        context.fillStyle = '#ff0';
+        context.fillRect(bird.x, bird.y, bird.width, bird.height);
+
+        pipes.forEach(pipe => {
+            context.fillStyle = '#0f0';
+            context.fillRect(pipe.x, 0, pipeWidth, pipe.y);
+            context.fillRect(pipe.x, pipe.y + pipeGap, pipeWidth, canvas.height - pipe.y - pipeGap);
+        });
+
+        context.fillStyle = '#000';
+        context.font = '16px Arial';
+        context.fillText('Score: ' + score, 10, 20);
+    }
+
+    function reset() {
+        bird.y = 150;
+        bird.velocity = 0;
+        pipes.length = 0;
+        frameCount = 0;
+        score = 0;
+    }
+
+    setup();
+</script>
+</body>
+</html>
