@@ -1,0 +1,16 @@
+Index: test.txt
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>Max war hier.\r\nAnselm war hier...
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/test.txt b/test.txt
+--- a/test.txt	(revision 2c77fa7636e0b58aeab2601a2666dd7d0bc6357e)
++++ b/test.txt	(date 1723639784780)
+@@ -1,2 +1,2 @@
+ Max war hier.
+-Anselm war hier...
+\ No newline at end of file
++Anselm war nicht hier...
+\ No newline at end of file
