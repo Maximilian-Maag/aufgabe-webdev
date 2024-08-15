@@ -1,5 +1,90 @@
-<html>
-	<body>
-		<h1>Testseite</h1>
-	</body>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Hier sind die Arbeitsunterlagen.</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			text-align: center;
+			margin-top: 69px;
+			background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient von Orange zu Rosa */
+			color: #333; /* Textfarbe an den Hintergrund anpassen */
+		}
+		.download-button {
+			background-color: #696969;
+			color: white;
+			padding: 16px 42px;
+			text-align: center;
+			text-decoration: none;
+			display: inline-block;
+			font-size: 42px;
+			margin: 20px 2px;
+			cursor: pointer;
+			border: none;
+			border-radius: 4px;
+		}
+
+		.download-button:hover {
+			animation: blink 1.5s infinite;
+		}
+		@keyframes blink {
+			0% {
+				background-color: #4CAF50;
+				color: blue;
+				font-family: Arial, sans-serif;
+
+			}
+			25% {
+				background-color: #FF0000;
+				color: green;
+				font-family: "Times New Roman", sans-serif;
+
+			}
+			50% {
+				background-color: #0000FF;
+				color: red;
+				font-family: Wingdings, sans-serif;
+
+			}
+			75% {
+				background-color: #FFFF00;
+				color: black;
+				font-family: "Comic Sans MS", sans-serif;
+
+			}
+			100% {
+				background-color: #4CAF50;
+				color: white;
+				font-family: "Lucida Sans Typewriter", sans-serif;
+
+			}
+		}
+
+		.invisible-button {
+			background-color: transparent;
+			color: transparent;
+			border: none;
+			padding: 15px 32px;
+			cursor: pointer;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		.invisible-button:focus {
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+<h1>Hier sind die Arbeitsunterlagen!!!</h1>
+<a href="Arbeitsunterlagen.pdf" download="Arbeitsunterlagen" class="download-button">Download</a>
+<h2></h2>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="invisible-button">Geheim!!!</a>
+<a href="https://www.youtube.com/watch?v=0aZvBvXyx7M" target="_blank" class="invisible-button">Geheim!!!</a>
+<h2></h2>
+<a href="help.html" class="download-button">Mehr</a>
+
+</body>
 </html>
