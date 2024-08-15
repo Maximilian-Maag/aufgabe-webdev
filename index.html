@@ -6,12 +6,12 @@
 	<title>Hier sind die Arbeitsunterlagen.</title>
 	<style>
 		body {
-			font-family: "Comic Sans MS", sans-serif;
+			font-family: Arial, sans-serif;
 			text-align: center;
 			margin-top: 69px;
 		}
 		.download-button {
-			background-color: #ff00ff;
+			background-color: #696969;
 			color: white;
 			padding: 16px 42px;
 			text-align: center;
@@ -28,17 +28,60 @@
 			animation: blink 1.5s infinite;
 		}
 		@keyframes blink {
-			0% { background-color: #4CAF50; color: blue;}
-			25% { background-color: #FF0000; color: green;}
-			50% { background-color: #0000FF; color; red;}
-			75% { background-color: #FFFF00; color: black;}
-			100% { background-color: #4CAF50; color: white;}
+			0% {
+				background-color: #4CAF50;
+				color: blue;
+				font-family: Arial, sans-serif;
 
+			}
+			25% {
+				background-color: #FF0000;
+				color: green;
+				font-family: "Times New Roman", sans-serif;
+
+			}
+			50% {
+				background-color: #0000FF;
+				color: red;
+				font-family: Wingdings, sans-serif;
+
+			}
+			75% {
+				background-color: #FFFF00;
+				color: black;
+				font-family: "Comic Sans MS", sans-serif;
+
+			}
+			100% {
+				background-color: #4CAF50;
+				color: white;
+				font-family: "Lucida Sans Typewriter", sans-serif;
+
+			}
 		}
+
+		.invisible-button {
+			background-color: transparent;
+			color: transparent;
+			border: none;
+			padding: 15px 32px;
+			cursor: pointer;
+			display: inline-block;
+			text-decoration: none;
+			font-size: 16px;
+		}
+		.invisible-button:focus {
+			outline: none;
+		}
+
+
 	</style>
 </head>
 <body>
 <h1>Hier sind die Arbeitsunterlagen!!!</h1>
-<a href="arbeitsunterlagen.pdf" download="Arbeitsunterlagen" class="download-button">Download</a>
+<a href="Arbeitsunterlagen.pdf" download="Arbeitsunterlagen" class="download-button">Download</a>
+<h2></h2>
+<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" target="_blank" class="invisible-button">Geheim!!!</a>
+
 </body>
 </html>
